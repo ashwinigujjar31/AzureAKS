@@ -37,7 +37,7 @@ spec:
   selector:
     app: springboot-app
     
-    - task: CopyFiles@2
+- task: CopyFiles@2
   inputs:
     targetFolder: '$(Build.ArtifactStagingDirectory)'    
 
