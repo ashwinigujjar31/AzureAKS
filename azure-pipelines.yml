@@ -57,3 +57,12 @@ stages:
         sourceImageTag: $(Build.BuildId)
         pushTag: latest
         repositoryName: 'my-sample-docker-repo'
+        
+        - task: CopyFiles@2
+  inputs:
+    targetFolder: '$(Build.ArtifactStagingDirectory)'    
+
+- task: PublishBuildArtifacts@1    
+  displayName: 'Publish Artifact: drop'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
